@@ -27,12 +27,12 @@ A fullstack web app for tracking personal expenses, with user authentication and
 | Deployment | Render (backend), Netlify (frontend) |
 
 ## Screenshots
-*(Add 2–3 screenshots here — login page, dashboard with expenses, and the pie chart)*
 
-```
-![Login Page](screenshots/login.png)
-![Dashboard](screenshots/dashboard.png)
-```
+**Login Page**
+![Login Page](screenshots/login.jpg)
+
+**Dashboard**
+![Dashboard](screenshots/dashboard.jpg)
 
 ## Project Structure
 ```
