@@ -75,6 +75,8 @@ function renderExpenses(expenses) {
 }
 
 // ---------- Load summary ----------
+let categoryChart = null; // keep a reference so we can destroy/redraw it
+
 async function loadSummary() {
   try {
     const res = await fetch(`${API_URL}/summary/stats`, { headers: authHeaders() });
@@ -82,16 +84,39 @@ async function loadSummary() {
 
     document.getElementById('totalThisMonth').textContent = `Rs. ${data.totalThisMonth.toFixed(2)}`;
 
-    const breakdown = document.getElementById('categoryBreakdown');
-    const categories = Object.entries(data.byCategory);
+    const categories = Object.keys(data.byCategory);
+    const amounts = Object.values(data.byCategory);
+
+    const ctx = document.getElementById('categoryChart');
+
+    // Destroy old chart before drawing a new one (prevents overlapping charts)
+    if (categoryChart) {
+      categoryChart.destroy();
+    }
 
     if (categories.length === 0) {
-      breakdown.innerHTML = '<p>No spending data yet</p>';
-    } else {
-      breakdown.innerHTML = categories.map(([cat, amt]) =>
-        `<p>${cat}: Rs. ${amt.toFixed(2)}</p>`
-      ).join('');
+      return; // no data yet, nothing to chart
     }
+
+    categoryChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: categories,
+        datasets: [{
+          data: amounts,
+          backgroundColor: [
+            '#2d6a4f', '#40916c', '#74c69d', '#95d5b2',
+            '#b7e4c7', '#1b4332', '#52b788', '#d8f3dc'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
 
   } catch (err) {
     console.error(err);
