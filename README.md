@@ -1,6 +1,6 @@
 # Expense Tracker
 
-A fullstack web app for tracking personal expenses, with user authentication and a spending summary chart. Built as a portfolio project for internship applications.
+A fullstack web app for tracking personal expenses, with user authentication and a spending summary chart.
 
 ## Live Demo
 - **Frontend:** https://joyful-bonbon-5426c4.netlify.app
