@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/expenses';
+const API_URL = 'https://expense-tracker-rumm.onrender.com/api/expenses';
 const token = localStorage.getItem('token');
 
 // Protect this page — redirect to login if not authenticated

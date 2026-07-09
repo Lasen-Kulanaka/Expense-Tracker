@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://expense-tracker-rumm.onrender.com/api/auth';
 
 const loginTab = document.getElementById('loginTab');
 const signupTab = document.getElementById('signupTab');
