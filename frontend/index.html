@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <div class="dashboard-header">
+      <h1>Expense Tracker</h1>
+      <button id="logoutBtn">Log Out</button>
+    </div>
+
+    <!-- Summary -->
+    <div class="card">
+      <h2>This Month</h2>
+      <div class="summary-stats" id="summaryStats">
+        <div class="stat-box">
+          <div class="label">Total Spent</div>
+          <div class="value" id="totalThisMonth">Rs. 0</div>
+        </div>
+      </div>
+      <div id="categoryBreakdown"></div>
+    </div>
+
+    <!-- Add / Edit Expense Form -->
+    <div class="card">
+      <h2 id="formTitle">Add Expense</h2>
+      <form id="expenseForm" class="expense-form">
+        <input type="hidden" id="expenseId">
+        <input type="number" id="amount" placeholder="Amount (Rs.)" step="0.01" required>
+        <input type="text" id="category" placeholder="Category (e.g. Food, Transport)" required>
+        <input type="text" id="note" placeholder="Note (optional)">
+        <input type="date" id="date" required>
+        <button type="submit" id="submitBtn">Add Expense</button>
+      </form>
+      <p id="formError" class="error-text"></p>
+    </div>
+
+    <!-- Expense List -->
+    <div class="card">
+      <h2>Your Expenses</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Note</th>
+            <th>Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="expenseTableBody">
+          <!-- rows inserted by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
