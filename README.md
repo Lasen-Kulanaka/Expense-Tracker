@@ -3,7 +3,7 @@
 A fullstack web app for tracking personal expenses, with user authentication and a spending summary chart.
 
 ## Live Demo
-- **Frontend:** https://joyful-bonbon-5426c4.netlify.app
+- **Frontend:** https://expense-tracker-1-ose7.onrender.com
 - **Backend API:** https://expense-tracker-rumm.onrender.com
 
 > Note: the backend is on Render's free tier, which sleeps after 15 minutes of inactivity. The first request after a while may take 30–60 seconds to respond.
